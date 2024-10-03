@@ -119,75 +119,6 @@
                 position: relative;
             }
 
-            /* STYLE COOKIE PLOICY BANNER */
-            div#hs-eu-cookie-confirmation {
-                width: auto !important;
-                top: auto !important;
-                bottom: 32px !important;
-                left: auto !important;
-                right: 15px !important;
-                font-family: Aeonikpro, sans-serif !important;
-                background: transparent !important;
-                height: 190px !important;
-                border: none !important;
-                box-shadow: none !important;
-                position: fixed !important;
-            }
-
-            div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner {
-                background: #000 !important;
-                color: #FFF !important;
-                max-width: 340px !important;
-            }
-
-            div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p {
-                color: #FFF !important;
-                margin: 12px 4px !important;
-            }
-
-            div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button {
-                background-color: #000 !important;
-                color: #FFF !important;
-                transition: ease 200ms;
-            }
-
-            div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button:hover {
-                background-color: #FFF !important;
-                color: #000 !important;
-            }
-
-            div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-decline-button {
-                background-color: #000 !important;
-                color: #FFF !important;
-                transition: ease 200ms;
-            }
-
-            div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-decline-button:hover {
-                background-color: #FFF !important;
-                color: #000 !important;
-            }
-
-            @media only screen and (max-device-width : 478px) {
-                div#hs-eu-cookie-confirmation {
-                    width: 100% !important;
-                    height: 150px !important;
-                    bottom: 16px !important;
-                    left: auto !important;
-                    right: auto !important;
-                }
-
-                div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner {
-                    max-width: 95% !important;
-                    width: 95% !important;
-                    padding: 16px !important;
-                }
-
-                div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-eu-policy-wording {
-                    margin-top: 8px !important;
-                }
-            }
-
-            /* END STYLE COOKIE PLOICY BANNER */
             /* GENERAL */
             textarea:focus, input:focus {
                 outline: none;
@@ -256,42 +187,6 @@
             }
         </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
-        <script>
-            window.onload = function() {
-              const facts = '[{"fact": "cuts her own bangs."},{"fact": "chicken biryani enthusiast."},{"fact": "hugs trees."},{"fact": "will walk everywhere."},{"fact": "likes to smile a lot."},{"fact": "has turtleneck obsession."},{"fact": "loves sketching faces."},{"fact": "can never finish her ice-cream"},{"fact": "mum\'s closet raider."},{"fact": "never says no to an adventure"},{"fact": "wants to run a marathon one day"},{"fact": "can’t swim but still dives in."},{"fact": "keeps a sketchbook handy."},{"fact": "prefers sunrises"},{"fact": "unapologetically tone-deaf"},{"fact": "organises her files"}]';
-              const meFacts = JSON.parse(facts);
-              let duplicateTracker = {};
-          
-              function updateMeFact() {
-                window.setTimeout(function() {
-                  updateMeFact();
-                }, 2000);
-          
-                let oldMeFact = document.getElementById("meFact");
-                if (oldMeFact) {
-                  oldMeFact.innerHTML = meFacts[randNum(0, meFacts.length - 1)].fact;
-                }
-              }
-          
-              function randNum(min, max) {
-                let randInt = Math.floor(Math.random() * (max - min + 1)) + min;
-          
-                while (duplicateTracker[randInt]) {
-                  randInt = Math.floor(Math.random() * (max - min + 1)) + min;
-                }
-          
-                if (Object.keys(duplicateTracker).length >= meFacts.length) {
-                  duplicateTracker = {};
-                }
-          
-                duplicateTracker[randInt] = true;
-                return randInt;
-              }
-          
-              // Start updating facts
-              updateMeFact();
-            }
-          </script>
         <style>
             video.about-diagram-video {
                 max-width: 100% !important;
@@ -497,9 +392,65 @@
                                 <div class="title-wrap---line space-between about">
                                     <div class="flex-h align-center grow mr-32">
                                       <div class="title-wrap noshrink">
-                                        <h1 class="meFact text-reveal _02 text-black display--desk-tab">
-                                          <span class="meFactSpan">cuts her own bangs.</span>
+                                        <h1 class= "title-h1 text-reveal _01 text-black">
+                                          <span id="meFactSpan">cuts her own bangs.</span>
                                         </h1>
+                                        <script>
+                                            // Define an array of facts about you
+                                            const facts = [
+                                              "cuts her own bangs.",
+                                              "chicken biryani enthusiast.",
+                                              "hugs trees.",
+                                              "will walk everywhere.",
+                                              "likes to smile a lot.",
+                                              "has a turtleneck obsession.",
+                                              "loves sketching faces.",
+                                              "can never finish her ice-cream.",
+                                              "mum\'s closet raider.",
+                                              "never says no to an adventure.",
+                                              "wants to run a marathon one day.",
+                                              "can\'t swim but still dives in.",
+                                              "keeps a sketchbook handy.",
+                                              "prefers sunrises.",
+                                              "unapologetically tone-deaf.",
+                                              "organises her files."
+                                            ];
+
+                                            // Function to shuffle the facts array
+                                            function shuffleArray(array) {
+                                                for (let i = array.length - 1; i > 0; i--) {
+                                                    const j = Math.floor(Math.random() * (i + 1)); // Random index
+                                                    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+                                                }
+                                            }
+                                         
+                                            // Function to change the fact automatically
+                                            function changeFact() {
+                                              // Get the element where the fact should appear
+                                              const factElement = document.getElementById('meFactSpan');
+
+                                              // Shuffle the facts array for the first time
+                                              shuffleArray(facts);
+                                            
+                                              // Set a counter to keep track of which fact is being shown
+                                              let factIndex = 0;
+                                          
+                                              // Use setInterval to change the fact every 3 seconds (3000 ms)
+                                              const intervalId = setInterval(() => {
+                                                factElement.textContent = facts[factIndex]; // Update the fact content
+                                                factIndex++; // Move to the next fact
+
+                                                // If all facts have been displayed, reshuffle the array and reset the index
+                                                if (factIndex === facts.length) {
+                                                    shuffleArray(facts); // Reshuffle the facts
+                                                    factIndex = 0; // Reset index to start from the beginning
+                                                }
+                                              }, 2000); // 2000 milliseconds = 2 seconds
+                                            }
+                                          
+                                            // Call the function to start the automatic change
+                                            changeFact();
+                                        </script>
                                       </div>
                                     </div>
                                 </div>
@@ -538,7 +489,7 @@
                 <div data-scroll-position="top" data-scroll="1" data-scroll-sticky="1" data-scroll-target="#about-diagram-section" class="about-diag__sticky-wrapper">
                     <div class="about-diag__intro-wrap">
                         <div class="about-diag__intro-margin"></div>
-                        <h3 class="about-diag__intro-desc">I absoultely cherish life. are you curious to know why many call me a</h3>
+                        <h3 class="about-diag__intro-desc">oh yeah! <br> you must be curious to know why many call me a </br> </h3>
                         <div class="about-diag__intro-titles-wrap mbm">
                             <div data-w-id="50ff68bf-7953-5a49-1293-e57bc1c02464" class="title-wrap about-diag">
                                 <h2 class="intro_bold-text about _01">PING PONG</h2>
@@ -598,7 +549,7 @@
                 <div data-scroll-position="top" data-scroll="1" data-scroll-sticky="1" data-scroll-target="#about-how-we-section" class="about-how-we__sticky-wrapper">
                     <div class="about-how-we__sticky-content">
                         <div class="about-how-we__title-wrap">
-                            <h3 class="about-how-we__title">That’s how we</h3>
+                            <h3 class="about-how-we__title">That's how we</h3>
                             <div class="about-how-we__title-line"></div>
                         </div>
                     </div>
@@ -624,10 +575,10 @@
                                     <div data-w-id="a8b21bb3-0650-cf55-dba9-e53fc0ab91a2" class="about-team__item-wrap">
                                         <div class="about-team__text-wrap">
                                             <div class="about-team__name mbm">Cycling</div>
-                                            <div class="about-team__role mbm">Founder + CEO</div>
+                                            <div class="about-team__role mbm">I cycle</div>
                                         </div>
                                         <div data-w-id="72966c8e-046d-8ab4-5a15-7e9522c8d4aa" class="about-team__photo-wrap">
-                                            <img src="https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/624a646952fcc21d432b68fb_tr-hs-02.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 38vw, 352px" srcset="https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/624a646952fcc21d432b68fb_tr-hs-02-p-500.jpg 500w, https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/624a646952fcc21d432b68fb_tr-hs-02-p-800.jpg 800w, https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/624a646952fcc21d432b68fb_tr-hs-02.jpg 1200w" class="about-team__photo"/>
+                                            //<img src="https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/624a646952fcc21d432b68fb_tr-hs-02.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 38vw, 352px" srcset="https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/624a646952fcc21d432b68fb_tr-hs-02-p-500.jpg 500w, https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/624a646952fcc21d432b68fb_tr-hs-02-p-800.jpg 800w, https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/624a646952fcc21d432b68fb_tr-hs-02.jpg 1200w" class="about-team__photo"/>
                                         </div>
                                         <div class="bold-list-bg-hover bg-black"></div>
                                     </div>
@@ -636,7 +587,7 @@
                                     <div data-w-id="a8b21bb3-0650-cf55-dba9-e53fc0ab91a2" class="about-team__item-wrap">
                                         <div class="about-team__text-wrap">
                                             <div class="about-team__name mbm">Sketching</div>
-                                            <div class="about-team__role mbm">Managing Director</div>
+                                            <div class="about-team__role mbm">I sketch</div>
                                         </div>
                                         <div data-w-id="72966c8e-046d-8ab4-5a15-7e9522c8d4aa" class="about-team__photo-wrap">
                                             <img src="https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/62461d25fff0931e235a24e0_danielle.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 38vw, 352px" srcset="https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/62461d25fff0931e235a24e0_danielle-p-500.jpeg 500w, https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/62461d25fff0931e235a24e0_danielle.jpg 800w" class="about-team__photo"/>
@@ -648,7 +599,7 @@
                                     <div data-w-id="a8b21bb3-0650-cf55-dba9-e53fc0ab91a2" class="about-team__item-wrap">
                                         <div class="about-team__text-wrap">
                                             <div class="about-team__name mbm">Dancing</div>
-                                            <div class="about-team__role mbm">Design Director</div>
+                                            <div class="about-team__role mbm">I dance</div>
                                         </div>
                                         <div data-w-id="72966c8e-046d-8ab4-5a15-7e9522c8d4aa" class="about-team__photo-wrap">
                                             <img src="https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/625c2c730465ac95c37e2d9b_bryan.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 38vw, 352px" srcset="https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/625c2c730465ac95c37e2d9b_bryan-p-500.jpeg 500w, https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/625c2c730465ac95c37e2d9b_bryan.jpg 668w" class="about-team__photo"/>
@@ -660,7 +611,7 @@
                                     <div data-w-id="a8b21bb3-0650-cf55-dba9-e53fc0ab91a2" class="about-team__item-wrap">
                                         <div class="about-team__text-wrap">
                                             <div class="about-team__name mbm">Painting</div>
-                                            <div class="about-team__role mbm">VP of Growth</div>
+                                            <div class="about-team__role mbm">I paint</div>
                                         </div>
                                         <div data-w-id="72966c8e-046d-8ab4-5a15-7e9522c8d4aa" class="about-team__photo-wrap">
                                             <img src="https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/62461d48489343bac3202913_theresa.jpg" loading="lazy" alt="" class="about-team__photo"/>
@@ -672,7 +623,7 @@
                                     <div data-w-id="a8b21bb3-0650-cf55-dba9-e53fc0ab91a2" class="about-team__item-wrap">
                                         <div class="about-team__text-wrap">
                                             <div class="about-team__name mbm">My furry kids</div>
-                                            <div class="about-team__role mbm">Executive Producer</div>
+                                            <div class="about-team__role mbm">so n so</div>
                                         </div>
                                         <div data-w-id="72966c8e-046d-8ab4-5a15-7e9522c8d4aa" class="about-team__photo-wrap">
                                             <img src="https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/625c2c6890b5f066bc27456a_steph.jpg" loading="lazy" alt="" sizes="(max-width: 479px) 38vw, 352px" srcset="https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/625c2c6890b5f066bc27456a_steph-p-500.jpeg 500w, https://cdn.prod.website-files.com/620970e0fc117e313fe36ebd/625c2c6890b5f066bc27456a_steph.jpg 600w" class="about-team__photo"/>
@@ -680,176 +631,6 @@
                                         <div class="bold-list-bg-hover bg-black"></div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div data-scroll-section="1" class="footer_section">
-                <div class="footer">
-                    <div class="footer-news-wrap">
-                        <div class="footer-news-title-wrap">
-                            <div class="footer-news-title">Fuel for Thought</div>
-                            <div class="footer-news-desc text-align--center">A casual hello from the RocketAir Crew filled with insights, inspiration, and good vibes only.</div>
-                        </div>
-                        <img src="https://cdn.prod.website-files.com/6205ecdcec584c56193d6121/6246217a2a1efb208cb41ffa_badge-fueled_news.svg" loading="lazy" alt="" class="footer-news-badge"/>
-                        <div class="footer-newsletter__form-wrap w-form">
-                            <div class="css-form-styling w-embed">
-                                <style>
-                                    .floating-label-contact {
-                                        pointer-events: none;
-                                    }
-
-                                    .custom-input--dark:not(:placeholder-shown) {
-                                        padding-top: 1.5rem;
-                                        padding-bottom: .5rem;
-                                    }
-
-                                    .custom-input--dark:not(:placeholder-shown) + .floating-label-contact {
-                                        color: #979797;
-                                        transform: scale(.75);
-                                        top: .5rem;
-                                    }
-
-                                    .custom-input--dark:not(:focus) + .floating-label-contact {
-                                        color: #979797;
-                                    }
-                                </style>
-                            </div>
-                            <form id="wf-form-Newsletter-Form-Footer" name="wf-form-Newsletter-Form-Footer" data-name="Newsletter Form Footer" action="https://rocketair.us3.list-manage.com/subscribe/post?u=653f33df58019a93f7a40acad&amp;amp;id=6b5444195e" method="post" class="contact__form" data-wf-page-id="624d9bea28eb056220c49332" data-wf-element-id="f0ed50fe-6385-8c93-e2a6-1050c74c4893">
-                                <div class="footer__form-text-wrap">
-                                    <div class="field mb-8">
-                                        <div class="text-input-3 custom">
-                                            <div class="html-field w-embed">
-                                                <input class="custom-input--dark" placeholder="Email" type="email" name="EMAIL" id="NewsletterEmail" required>
-                                                <label class="floating-label-contact" for="NewsletterEmail">Email</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <input type="submit" data-wait="Please wait..." class="main-button w-button" value="Subscribe"/>
-                            </form>
-                            <div class="contact__success-wrap w-form-done">
-                                <div class="contact__success-form">
-                                    <div class="contact__success-form__text-wrap footer-form">
-                                        <h3 class="contact__success-text-desc">You’re on the list.</h3>
-                                        <div class="contact__success-text-caption-2 footer-form">See you in your inbox soon.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="error-wrap--on-dark w-form-fail">
-                                <div class="error-text--on-dark in-footer">
-                                    Oops! Something went wrong...<br/>Try to refresh the page.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-list-wrapper">
-                        <div class="menu__collection-list-wrapper in-footer w-dyn-list">
-                            <div role="list" class="menu__collection-list footer-coll-list w-dyn-items">
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/work" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Work</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/about" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">About</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/services" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Services</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/verticals" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Verticals</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/careers" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Careers</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/ideas" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Ideas</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/news" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">News</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/contact" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Contact</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer__social-wrapper">
-                            <div class="menu__social-icons-wrap">
-                                <a href="https://twitter.com/rocketairagency" target="_blank" class="social-link-bloc menu w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6205ecdcec584c56193d6121/6246f1825c2738c8c5b0f428_ic-Twitter-white.svg" loading="lazy" alt="" class="news__ic-social"/>
-                                    <div class="social-link-bloc__hover-bg menu"></div>
-                                </a>
-                                <a href="https://www.linkedin.com/company/rocketair/?trk=ppro_cprof&amp;originalSubdomain=fr" target="_blank" class="social-link-bloc menu w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6205ecdcec584c56193d6121/6246f183aaf7e07b5f4d0b8c_ic-Linkedin-white.svg" loading="lazy" alt="" class="news__ic-social"/>
-                                    <div class="social-link-bloc__hover-bg menu"></div>
-                                </a>
-                                <a href="https://www.youtube.com/channel/UCQZRWFejYexfLdePM7gjLTA" target="_blank" class="social-link-bloc menu w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6205ecdcec584c56193d6121/6246f182524aea73deaf1cf4_ic-youtube-white.svg" loading="lazy" alt="" class="news__ic-social"/>
-                                    <div class="social-link-bloc__hover-bg menu"></div>
-                                </a>
-                                <a href="https://www.instagram.com/rocketairagency/" target="_blank" class="social-link-bloc menu w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6205ecdcec584c56193d6121/6246f1829675797dd5126294_ic_instagram-white.svg" loading="lazy" alt="" class="news__ic-social"/>
-                                    <div class="social-link-bloc__hover-bg menu"></div>
-                                </a>
-                            </div>
-                            <div class="footer__social-links-wrap">
-                                <a href="/privacy" class="footer__text-link">Privacy Policy</a>
                             </div>
                         </div>
                     </div>
