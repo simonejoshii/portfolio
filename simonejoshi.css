@@ -4347,8 +4347,9 @@ blockquote {
   transform-origin: 0%;
   letter-spacing: -10px;
   text-transform: uppercase;
-  font-size: 23.5vw;
+  font-size: 18vw;
   line-height: .85;
+  
 }
 
 .intro_bold-text.about {
@@ -7730,16 +7731,19 @@ blockquote {
 }
 
 .hero-about__image-wrap._01 {
+  display: flex;
   justify-content: center;
+  align-items: flex-end; /* Centers content vertically */
+  height: 120vh; /* Full viewport height */
 }
 
 .hero-about__image-wrap._02 {
-  margin-top: -5em;
+  margin-top: -15em;
 }
 
 .hero-about__image-wrap._03 {
   justify-content: flex-end;
-  margin-top: -15em;
+  margin-top: -25em;
 }
 
 .hero-about__image {
@@ -7796,7 +7800,7 @@ blockquote {
   width: 100%;
   height: 100%;
   display: flex;
-  position: relative;
+  position: static;
 }
 
 .about-diag__intro-desc {
@@ -13987,6 +13991,7 @@ blockquote {
   .menu__social-wrapper {
     height: auto;
     padding: 16px;
+
   }
 
   .footer__social-wrapper {
@@ -14183,4 +14188,40 @@ blockquote {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+}
+
+.section__body {
+  font-size: 30px;
+  line-height: 1.15;
+  margin-top: 2em;
+}
+
+.section__body.text-black {
+  margin-bottom: 48px;
+}
+
+
+.section__body.masonry {
+  color: var(--grey-200);
+}
+
+.section__body.mb-12 {
+  margin-bottom: 20px;
+}
+
+.section__body.masonry {
+  color: var(--white);
+}
+
+
+.section__body {
+  line-height: 38px;
+}
+
+.section__body {
+  line-height: 30px;
+}
+
+.section__body.text-reveal.display-mob {
+  display: none;
 }
