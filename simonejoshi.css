@@ -3542,6 +3542,11 @@ blockquote {
   line-height: 1.4;
 }
 
+.mb-0 {
+  margin-bottom: 0px;
+  line-height: 0;
+}
+
 .mb-48 {
   margin-bottom: 48px;
 }
@@ -5596,6 +5601,7 @@ blockquote {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .rich-text {
@@ -5843,7 +5849,6 @@ blockquote {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 52.5vw;
   display: flex;
   overflow: hidden;
 }
@@ -5864,9 +5869,10 @@ blockquote {
 .cs__img-col {
   object-fit: cover;
   width: 100%;
-  min-width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
 }
+
 
 .cs__img-col.grid_4 {
   height: 100%;
@@ -14224,4 +14230,51 @@ blockquote {
 
 .section__body.text-reveal.display-mob {
   display: none;
+}
+
+.ideation-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  background-color: black;
+  color: white;
+  gap: 40px;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ideation-content {
+  flex: 1;
+  max-width: 45%;
+}
+
+.ideation-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.ideation-text {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.highlight {
+  color: #FF4500;
+}
+
+.video-container {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ideation-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #993300;
+  pointer-events: none;
+  min-height: 300px;
 }
