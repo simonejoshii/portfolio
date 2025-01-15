@@ -14278,3 +14278,32 @@ blockquote {
   pointer-events: none;
   min-height: 300px;
 }
+
+.cs-hero__subtitle {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  margin-top: 8px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.conf-letters {
+  font-weight: 700; /* Makes HWWE bold */
+}
+
+.conf-h {
+  color: #4040FF; /* Bright blue */
+}
+
+.conf-w1 {
+  color: #FF4040; /* Bright red */
+}
+
+.conf-w2 {
+  color: #FFFF40; /* Bright yellow */
+}
+
+.conf-e {
+  color: #40FF40; /* Bright green */
+}
