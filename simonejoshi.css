@@ -4366,6 +4366,7 @@ blockquote {
   transform-origin: 50% 0;
 }
 
+
 .intro-text__we-call-it {
   background-color: var(--black);
   font-size: 30px;
@@ -7900,7 +7901,7 @@ blockquote {
 
 .about-diag__intro-titles-wrap {
   z-index: 20;
-  transform-origin: 50% 0;
+  transform-origin: 49% 0;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -14307,3 +14308,5 @@ blockquote {
 .conf-e {
   color: #40FF40; /* Bright green */
 }
+
+
