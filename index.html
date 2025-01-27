@@ -549,7 +549,7 @@
                 </div>
                 <div class="topbar-menu__border-open"></div>
             </div>
-            <a id="menu-cta-contact" data-w-id="1c6302e0-4172-dd86-ffd3-cf1e5460dde4" href="https://drive.google.com/file/d/1VCalXqTTLaDJuiMB6TxrQX-WOEqAzcJv/view?usp=drive_link" class="menu__cta-contact w-inline-block">
+            <a id="menu-cta-contact" data-w-id="1c6302e0-4172-dd86-ffd3-cf1e5460dde4" href="https://drive.google.com/file/d/1VCalXqTTLaDJuiMB6TxrQX-WOEqAzcJv/view?usp=sharing" class="menu__cta-contact w-inline-block">
                 <div class="menu__cta-text">Resume</div>
                 <div class="menu-cta__bg-hover"></div>
             </a>
@@ -568,9 +568,9 @@
                                             </div>
                                         </div>
                                         <div class="home-work__card-text-wrap">
-                                            <div class="home-work__card-name mb-12">Redefining Reddit</div>
+                                            <div class="home-work__card-name mb-12">Reddit</div>
                                         </div>
-                                        <div class="home-work__card-desc">Back to a Community-Driven Platform</div>
+                                        <div class="home-work__card-desc">Redefining Reddit back to a Community-Driven Platform</div>
                                     </a>
                                 </div>
                                 <div role="listitem" class="menu__work-collection-item w-dyn-item">
@@ -587,16 +587,16 @@
                                     </a>
                                 </div>
                                 <div role="listitem" class="menu__work-collection-item w-dyn-item">
-                                    <a data-scroll="1" data-w-id="8b761af8-4aff-13b7-5190-cce1d15af9c3" href="/bharatnatyam.html" class="card__case-study cursor-pointer w-inline-block">
+                                    <a data-scroll="1" data-w-id="8b761af8-4aff-13b7-5190-cce1d15af9c3" href="/bhartnatyam.html" class="card__case-study cursor-pointer w-inline-block">
                                         <div class="home-work__card-img-mask">
                                             <div data-scroll="1" class="home-work__card-img-wrap">
-                                                <img src="casestudy/bharatnatyam/vertical_thumbnial_more.png" loading="lazy" alt="" sizes="100vw" class="home-work__card-img"/>
+                                                <img src="/casestudy/bharatnatyam/vertical_thumbnial_more.png" loading="lazy" alt="" sizes="100vw" class="home-work__card-img"/>
                                             </div>
                                         </div>
                                         <div class="home-work__card-text-wrap">
-                                            <div class="home-work__card-name mb-12">Practicing Bhartnatyam Made Easy</div>
+                                            <div class="home-work__card-name mb-12">Smart Anklet for Bharatnatyam</div>
                                         </div>
-                                        <div class="home-work__card-desc">Smart Anklet</div>
+                                        <div class="home-work__card-desc">Practicing made easy</div>
                                     </a>
                                 </div>
                             </div>
@@ -651,9 +651,13 @@
                                 </div>
                                 <div role="listitem" class="menu__collection-item w-dyn-item">
                                     <div data-w-id="8b761af8-4aff-13b7-5190-cce1d15af9d1" class="menu__collection-item-trigger">
-                                        <a data-w-id="8b761af8-4aff-13b7-5190-cce1d15af9d2" href="/menu/contact.html" class="menu__collection-item-wrap w-inline-block">
+                                        <a 
+                                            data-w-id="8b761af8-4aff-13b7-5190-cce1d15af9d2" 
+                                            href="https://drive.google.com/file/d/1VCalXqTTLaDJuiMB6TxrQX-WOEqAzcJv/view?usp=sharing" 
+                                            class="menu__collection-item-wrap w-inline-block" 
+                                        >
                                             <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Contact</div>
+                                                <div class="menu__collection-text mbm">Resume</div>
                                             </div>
                                             <div class="bold-list-bg-hover"></div>
                                         </a>
@@ -677,9 +681,27 @@
                                     <div class="social-link-bloc__hover-bg menu"></div>
                                 </a>
                             </div>
-                            <a href="https://drive.google.com/file/d/1VCalXqTTLaDJuiMB6TxrQX-WOEqAzcJv/view?usp=drive_link" class="main-button w-inline-block" target="_blank">
-                                <div class="button__text menu-newsletter-btn">Resume</div>
+                            <a href="javascript:void(0);" class="main-button w-inline-block" id="copyEmailButton">
+                                <div class="button__text menu-newsletter-btn">Copy Email</div>
                             </a>
+                            
+                            <script>
+                                // JavaScript to handle button click and copy functionality
+                                document.getElementById('copyEmailButton').addEventListener('click', function () {
+                                    const email = "simonejoshi18@gmail.com"; // Email to copy
+                                    navigator.clipboard.writeText(email).then(() => {
+                                        const buttonText = document.querySelector('#copyEmailButton .button__text');
+                                        buttonText.textContent = "Copied!"; // Change button text
+                            
+                                        // Reset button text after 2 seconds
+                                        setTimeout(() => {
+                                            buttonText.textContent = "Copy Email";
+                                        }, 3000);
+                                    }).catch(err => {
+                                        console.error('Failed to copy email:', err);
+                                    });
+                                });
+                            </script> 
                         </div>
                     </div>
                 </div>
@@ -815,7 +837,7 @@
                         <div data-scroll="1" data-w-id="1c84b608-fa3b-825e-ab6f-822cfb8ee9ef" class="home-services-list-wrapper z-2 w-dyn-list">
                             <div data-scroll="1" role="list" class="home-services-list w-dyn-items">
                                 <div data-scroll="1" role="listitem" class="home-services-item w-dyn-item">
-                                    <a data-w-id="1c84b608-fa3b-825e-ab6f-822cfb8ee9f2" href="/menu/b" class="home-services__col-service _03 w-inline-block">
+                                    <a data-w-id="1c84b608-fa3b-825e-ab6f-822cfb8ee9f2" href="/menu/blog.html" class="home-services__col-service _03 w-inline-block">
                                         <div class="home-services__title-wrap">
                                             <div class="home-services__title-icon-wrap">
                                                 <div class="home-services__title-icon">
@@ -1022,115 +1044,25 @@
             </div>
             <div data-scroll-section="1" class="footer_section">
                 <div class="footer">
-                    <div class="footer-list-wrapper">
-                        <div class="menu__collection-list-wrapper in-footer w-dyn-list">
-                            <div role="list" class="menu__collection-list footer-coll-list w-dyn-items">
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/work" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Work</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/about" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">About</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/services" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Services</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/verticals" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Verticals</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/careers" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Careers</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="/menu/artwall.html" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Artwall</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">Blogs
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="/menu/blog.html" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Blogs</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div role="listitem" class="menu__collection-item w-dyn-item">
-                                    <div class="menu__collection-item-trigger">
-                                        <a data-w-id="f0ed50fe-6385-8c93-e2a6-1050c74c48ab" href="https://www.rocketair.com/contact" class="menu__collection-item-wrap footer w-inline-block">
-                                            <div class="menu__collection-text-wrap">
-                                                <div class="menu__collection-text mbm">Contact</div>
-                                            </div>
-                                            <div class="bold-list-bg-hover"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="footer__social-wrapper">
+                        <div class="menu__social-icons-wrap">
+                            <a href="https://www.linkedin.com/in/simone-joshi-872450260/" target="_blank" class="social-link-bloc menu w-inline-block">
+                                <img src="/icons/ic_linkedin_white.svg" loading="lazy" alt="" class="news__ic-social"/>
+                                <div class="social-link-bloc__hover-bg menu"></div>
+                            </a>
+                            <a href="https://www.behance.net/simonejoshi" target="_blank" class="social-link-bloc menu w-inline-block">
+                                <img src="/icons/ic_behance_white.svg" loading="lazy" alt="" class="news__ic-social"/>
+                                <div class="social-link-bloc__hover-bg menu"></div>
+                            </a>
+                            <a href="https://www.instagram.com/simone_joshi/" target="_blank" class="social-link-bloc menu w-inline-block">
+                                <img src="/icons/ic_instagram_white.svg" loading="lazy" alt="" class="news__ic-social"/>
+                                <div class="social-link-bloc__hover-bg menu"></div>
+                            </a>
                         </div>
-                        <div class="footer__social-wrapper">
-                            <div class="menu__social-icons-wrap">
-                                <a href="https://twitter.com/rocketairagency" target="_blank" class="social-link-bloc menu w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6205ecdcec584c56193d6121/6246f1825c2738c8c5b0f428_ic-Twitter-white.svg" loading="lazy" alt="" class="news__ic-social"/>
-                                    <div class="social-link-bloc__hover-bg menu"></div>
-                                </a>
-                                <a href="https://www.linkedin.com/company/rocketair/?trk=ppro_cprof&amp;originalSubdomain=fr" target="_blank" class="social-link-bloc menu w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6205ecdcec584c56193d6121/6246f183aaf7e07b5f4d0b8c_ic-Linkedin-white.svg" loading="lazy" alt="" class="news__ic-social"/>
-                                    <div class="social-link-bloc__hover-bg menu"></div>
-                                </a>
-                                <a href="https://www.youtube.com/channel/UCQZRWFejYexfLdePM7gjLTA" target="_blank" class="social-link-bloc menu w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6205ecdcec584c56193d6121/6246f182524aea73deaf1cf4_ic-youtube-white.svg" loading="lazy" alt="" class="news__ic-social"/>
-                                    <div class="social-link-bloc__hover-bg menu"></div>
-                                </a>
-                                <a href="https://www.instagram.com/rocketairagency/" target="_blank" class="social-link-bloc menu w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6205ecdcec584c56193d6121/6246f1829675797dd5126294_ic_instagram-white.svg" loading="lazy" alt="" class="news__ic-social"/>
-                                    <div class="social-link-bloc__hover-bg menu"></div>
-                                </a>
-                            </div>
-                            <div class="footer__social-links-wrap">
-                                <a href="/privacy" class="footer__text-link">Privacy Policy</a>
-                            </div>
+                        <div class="footer__social-links-wrap">
+                            <a class="footer__text-link">Coded by me!</a>
                         </div>
-                    </div>
+                    </div>    
                 </div>
             </div>
         </div>
