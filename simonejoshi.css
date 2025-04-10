@@ -14310,3 +14310,18 @@ blockquote {
 }
 
 
+.hero-gif-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-gif {
+  width: 100%;
+  max-width: 1200px; /* adjust based on your needs */
+  height: auto;
+  display: block;
+}
+
+
